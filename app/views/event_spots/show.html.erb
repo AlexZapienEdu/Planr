@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Event spot #<%= @the_event_spot.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/event_spots">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_event_spot/<%= @the_event_spot.id %>">
+          Delete event spot
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Event name
+      </dt>
+      <dd>
+        <%= @the_event_spot.event_name %>
+      </dd>
+
+      <dt>
+        Visitor
+      </dt>
+      <dd>
+        <%= @the_event_spot.visitor_id %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_event_spot.category_id %>
+      </dd>
+
+      <dt>
+        Desc
+      </dt>
+      <dd>
+        <%= @the_event_spot.desc %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_event_spot.image %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_event_spot.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_event_spot.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit event spot
+    </h2>
+
+    <form action="/modify_event_spot/<%= @the_event_spot.id %>"  method="post" >
+      <div>
+        <label for="event_name_box">
+          Event name
+        </label>
+
+        <input type="text" id="event_name_box" name="query_event_name" value="<%= @the_event_spot.event_name %>">
+      </div>
+
+      <div>
+        <label for="visitor_id_box">
+          Visitor
+        </label>
+
+        <input type="text" id="visitor_id_box" name="query_visitor_id" value="<%= @the_event_spot.visitor_id %>">
+      </div>
+
+      <div>
+        <label for="category_id_box">
+          Category
+        </label>
+
+        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_event_spot.category_id %>">
+      </div>
+
+      <div>
+        <label for="desc_box">
+          Desc
+        </label>
+
+        <textarea id="desc_box" name="query_desc"><%= @the_event_spot.desc %></textarea>
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_event_spot.image %>">
+      </div>
+
+      <button>
+        Update event spot
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

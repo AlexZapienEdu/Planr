@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Event spot resource:
+
+  # CREATE
+  post("/insert_event_spot", { :controller => "event_spots", :action => "create" })
+          
+  # READ
+  get("/event_spots", { :controller => "event_spots", :action => "index" })
+  
+  get("/event_spots/:path_id", { :controller => "event_spots", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_event_spot/:path_id", { :controller => "event_spots", :action => "update" })
+  
+  # DELETE
+  get("/delete_event_spot/:path_id", { :controller => "event_spots", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Category resource:
 
   # CREATE
