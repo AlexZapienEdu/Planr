@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all categories
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new category
+    </h2>
+
+    <form action="/insert_category" method="post">
+      <div>
+        <label for="category_name_box">
+          Category name
+        </label>
+
+        <input type="text" id="category_name_box" name="query_category_name">
+      </div>
+
+      <div>
+        <label for="dinner_spots_count_box">
+          Dinner spots count
+        </label>
+
+        <input type="text" id="dinner_spots_count_box" name="query_dinner_spots_count">
+      </div>
+
+      <div>
+        <label for="events_count_box">
+          Events count
+        </label>
+
+        <input type="text" id="events_count_box" name="query_events_count">
+      </div>
+
+      <div>
+        <label for="dessert_spots_count_box">
+          Dessert spots count
+        </label>
+
+        <input type="text" id="dessert_spots_count_box" name="query_dessert_spots_count">
+      </div>
+
+      <button>
+        Create category
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Category name
+        </th>
+
+        <th>
+          Dinner spots count
+        </th>
+
+        <th>
+          Events count
+        </th>
+
+        <th>
+          Dessert spots count
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_categories.each do |a_category| %>
+      <tr>
+        <td>
+          <%= a_category.id %>
+        </td>
+
+        <td>
+          <%= a_category.category_name %>
+        </td>
+
+        <td>
+          <%= a_category.dinner_spots_count %>
+        </td>
+
+        <td>
+          <%= a_category.events_count %>
+        </td>
+
+        <td>
+          <%= a_category.dessert_spots_count %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_category.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_category.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/categories/<%= a_category.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

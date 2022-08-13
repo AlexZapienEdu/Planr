@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Category #<%= @the_category.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/categories">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_category/<%= @the_category.id %>">
+          Delete category
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Category name
+      </dt>
+      <dd>
+        <%= @the_category.category_name %>
+      </dd>
+
+      <dt>
+        Dinner spots count
+      </dt>
+      <dd>
+        <%= @the_category.dinner_spots_count %>
+      </dd>
+
+      <dt>
+        Events count
+      </dt>
+      <dd>
+        <%= @the_category.events_count %>
+      </dd>
+
+      <dt>
+        Dessert spots count
+      </dt>
+      <dd>
+        <%= @the_category.dessert_spots_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_category.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_category.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit category
+    </h2>
+
+    <form action="/modify_category/<%= @the_category.id %>"  method="post" >
+      <div>
+        <label for="category_name_box">
+          Category name
+        </label>
+
+        <input type="text" id="category_name_box" name="query_category_name" value="<%= @the_category.category_name %>">
+      </div>
+
+      <div>
+        <label for="dinner_spots_count_box">
+          Dinner spots count
+        </label>
+
+        <input type="text" id="dinner_spots_count_box" name="query_dinner_spots_count" value="<%= @the_category.dinner_spots_count %>">
+      </div>
+
+      <div>
+        <label for="events_count_box">
+          Events count
+        </label>
+
+        <input type="text" id="events_count_box" name="query_events_count" value="<%= @the_category.events_count %>">
+      </div>
+
+      <div>
+        <label for="dessert_spots_count_box">
+          Dessert spots count
+        </label>
+
+        <input type="text" id="dessert_spots_count_box" name="query_dessert_spots_count" value="<%= @the_category.dessert_spots_count %>">
+      </div>
+
+      <button>
+        Update category
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
