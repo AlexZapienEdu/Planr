@@ -21,7 +21,11 @@ class DinnerSpotsController < ApplicationController
     the_dinner_spot = DinnerSpot.new
     the_dinner_spot.loc_name = params.fetch("query_loc_name")
     the_dinner_spot.visitor_id = session[:user_id]
-    the_dinner_spot.category_id = params.fetch("query_category_id")
+
+    input_cat = params.fetch("query_category_name")
+    matching_categories = Category.where({ :category_name => input_cat}).at(0)
+    the_dinner_spot.category_id = matching_categories.id
+
     the_dinner_spot.desc = params.fetch("query_desc")
     the_dinner_spot.image = params.fetch("query_image")
 
