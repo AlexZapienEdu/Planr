@@ -31,6 +31,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    matching_categories = Category.all
+    $list_of_categories = matching_categories.order({ :created_at => :desc })
+
     the_id = params.fetch("path_id")
     the_category = Category.where({ :id => the_id }).at(0)
 
