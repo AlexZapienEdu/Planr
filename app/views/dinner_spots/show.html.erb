@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Dinner spot #<%= @the_dinner_spot.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/dinner_spots">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_dinner_spot/<%= @the_dinner_spot.id %>">
+          Delete dinner spot
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Loc name
+      </dt>
+      <dd>
+        <%= @the_dinner_spot.loc_name %>
+      </dd>
+
+      <dt>
+        Visitor
+      </dt>
+      <dd>
+        <%= @the_dinner_spot.visitor_id %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_dinner_spot.category_id %>
+      </dd>
+
+      <dt>
+        Desc
+      </dt>
+      <dd>
+        <%= @the_dinner_spot.desc %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_dinner_spot.image %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_dinner_spot.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_dinner_spot.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit dinner spot
+    </h2>
+
+    <form action="/modify_dinner_spot/<%= @the_dinner_spot.id %>"  method="post" >
+      <div>
+        <label for="loc_name_box">
+          Loc name
+        </label>
+
+        <input type="text" id="loc_name_box" name="query_loc_name" value="<%= @the_dinner_spot.loc_name %>">
+      </div>
+
+      <div>
+        <label for="visitor_id_box">
+          Visitor
+        </label>
+
+        <input type="text" id="visitor_id_box" name="query_visitor_id" value="<%= @the_dinner_spot.visitor_id %>">
+      </div>
+
+      <div>
+        <label for="category_id_box">
+          Category
+        </label>
+
+        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dinner_spot.category_id %>">
+      </div>
+
+      <div>
+        <label for="desc_box">
+          Desc
+        </label>
+
+        <textarea id="desc_box" name="query_desc"><%= @the_dinner_spot.desc %></textarea>
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_dinner_spot.image %>">
+      </div>
+
+      <button>
+        Update dinner spot
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

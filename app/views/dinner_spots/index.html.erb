@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all dinner spots
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new dinner spot
+    </h2>
+
+    <form action="/insert_dinner_spot" method="post">
+      <div>
+        <label for="loc_name_box">
+          Loc name
+        </label>
+
+        <input type="text" id="loc_name_box" name="query_loc_name">
+      </div>
+
+      <div>
+        <label for="visitor_id_box">
+          Visitor
+        </label>
+
+        <input type="text" id="visitor_id_box" name="query_visitor_id">
+      </div>
+
+      <div>
+        <label for="category_id_box">
+          Category
+        </label>
+
+        <input type="text" id="category_id_box" name="query_category_id">
+      </div>
+
+      <div>
+        <label for="desc_box">
+          Desc
+        </label>
+
+        <textarea id="desc_box" name="query_desc" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <button>
+        Create dinner spot
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Loc name
+        </th>
+
+        <th>
+          Visitor
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Desc
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_dinner_spots.each do |a_dinner_spot| %>
+      <tr>
+        <td>
+          <%= a_dinner_spot.id %>
+        </td>
+
+        <td>
+          <%= a_dinner_spot.loc_name %>
+        </td>
+
+        <td>
+          <%= a_dinner_spot.visitor_id %>
+        </td>
+
+        <td>
+          <%= a_dinner_spot.category_id %>
+        </td>
+
+        <td>
+          <%= a_dinner_spot.desc %>
+        </td>
+
+        <td>
+          <%= a_dinner_spot.image %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_dinner_spot.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_dinner_spot.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/dinner_spots/<%= a_dinner_spot.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

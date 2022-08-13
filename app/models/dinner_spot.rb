@@ -1,0 +1,2 @@
+class DinnerSpot < ApplicationRecord
+end

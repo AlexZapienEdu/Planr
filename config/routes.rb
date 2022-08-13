@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Dinner spot resource:
+
+  # CREATE
+  post("/insert_dinner_spot", { :controller => "dinner_spots", :action => "create" })
+          
+  # READ
+  get("/dinner_spots", { :controller => "dinner_spots", :action => "index" })
+  
+  get("/dinner_spots/:path_id", { :controller => "dinner_spots", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_dinner_spot/:path_id", { :controller => "dinner_spots", :action => "update" })
+  
+  # DELETE
+  get("/delete_dinner_spot/:path_id", { :controller => "dinner_spots", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM
