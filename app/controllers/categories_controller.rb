@@ -20,10 +20,7 @@ class CategoriesController < ApplicationController
   def create
     the_category = Category.new
     the_category.category_name = params.fetch("query_category_name")
-    the_category.dinner_spots_count = params.fetch("query_dinner_spots_count")
-    the_category.events_count = params.fetch("query_events_count")
-    the_category.dessert_spots_count = params.fetch("query_dessert_spots_count")
-
+   
     if the_category.valid?
       the_category.save
       redirect_to("/categories", { :notice => "Category created successfully." })
@@ -37,9 +34,7 @@ class CategoriesController < ApplicationController
     the_category = Category.where({ :id => the_id }).at(0)
 
     the_category.category_name = params.fetch("query_category_name")
-    the_category.dinner_spots_count = params.fetch("query_dinner_spots_count")
-    the_category.events_count = params.fetch("query_events_count")
-    the_category.dessert_spots_count = params.fetch("query_dessert_spots_count")
+   
 
     if the_category.valid?
       the_category.save

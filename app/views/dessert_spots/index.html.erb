@@ -59,16 +59,13 @@
   <div>
     <table border="1">
       <tr>
+
         <th>
-          ID
+          Dessert Spot
         </th>
 
         <th>
-          Loc name
-        </th>
-
-        <th>
-          Visitor
+          Visited by
         </th>
 
         <th>
@@ -76,19 +73,11 @@
         </th>
 
         <th>
-          Desc
+          Description
         </th>
 
         <th>
           Image
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
         </th>
 
         <th>
@@ -97,20 +86,17 @@
 
       <% @list_of_dessert_spots.each do |a_dessert_spot| %>
       <tr>
-        <td>
-          <%= a_dessert_spot.id %>
-        </td>
 
         <td>
           <%= a_dessert_spot.loc_name %>
         </td>
 
         <td>
-          <%= a_dessert_spot.visitor_id %>
+          <%= a_dessert_spot.dess_user.username.capitalize %>
         </td>
 
         <td>
-          <%= a_dessert_spot.category_id %>
+          <%= a_dessert_spot.dess_category.category_name %>
         </td>
 
         <td>
@@ -119,13 +105,6 @@
 
         <td>
           <%= a_dessert_spot.image %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_dessert_spot.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_dessert_spot.updated_at) %> ago
         </td>
 
         <td>

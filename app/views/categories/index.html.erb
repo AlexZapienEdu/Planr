@@ -22,8 +22,6 @@
 
         <input type="text" id="category_name_box" name="query_category_name">
       </div>
-
-
       <button>
         Create category
       </button>
@@ -45,14 +43,6 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
@@ -66,17 +56,9 @@
           <%= a_category.category_name %>
         </td>
 
-
-        <td>
-          <%= time_ago_in_words(a_category.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_category.updated_at) %> ago
-        </td>
-
         <td>
           <a href="/categories/<%= a_category.id %>">
-            Show details
+           See all things that are <%= a_category.category_name %> 
           </a>
         </td>
       </tr>

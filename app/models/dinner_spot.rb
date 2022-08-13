@@ -13,7 +13,30 @@
 #
 class DinnerSpot < ApplicationRecord
 
-
   belongs_to(:visitor, { :class_name => "User", :foreign_key => "visitor_id" })
   belongs_to(:category, { :required => true, :class_name => "Category", :foreign_key => "category_id", :counter_cache => true })
+
+
+  def din_user
+    dinner_visitor_id = self.visitor_id
+
+    matching_people = User.where({ :id => dinner_visitor_id })
+
+    visitor_name = matching_people.at(0)
+
+    return visitor_name
+  end
+
+  def din_category
+    dessert_cat_id = self.category_id
+
+    matching_cats = Category.where({ :id => dessert_cat_id })
+
+    category_name = matching_cats.at(0)
+
+    return category_name
+  end
+
+
+
 end
