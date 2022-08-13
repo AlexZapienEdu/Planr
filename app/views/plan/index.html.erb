@@ -4,6 +4,62 @@
 
 <p><a href="/categories">Categories<a/></p>
 <p><a href="/user_sign_out">Sign out<a/></p>
-<h1>Home Page</h1>
+<h1>Night Planr</h1>
 
-Welcome <%= @current_user.username.capitalize%>
+<h3> Welcome <%= @current_user.username.capitalize%> </h3>
+<p>Select categories for each of your features below to plan for your ideal night out</p>
+
+
+<table style="width: 100%" border="1">
+      <tr>
+        <td>
+            Event
+        </td>
+
+        <td>
+            Dinner
+        </td>
+
+        <td>
+            Dessert
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+            <select  type="text" id="category_id_box1" name="query_cat1">
+              <% $list_of_categories.each do |a_cat| %>
+                <option>
+                  <%= a_cat.category_name %>
+                </option>
+              <% end %>
+            </select>
+        </td>
+
+        <td>
+            <select  type="text" id="category_id_box2" name="query_cat2">
+              <% $list_of_categories.each do |a_cat| %>
+                <option>
+                  <%= a_cat.category_name %>
+                </option>
+              <% end %>
+            </select>
+        </td>
+
+         <td>
+            <select  type="text" id="category_id_box3" name="query_cat3">
+              <% $list_of_categories.each do |a_cat| %>
+                <option>
+                  <%= a_cat.category_name %>
+                </option>
+              <% end %>
+            </select>
+        </td>
+      </tr>
+    </table>
+
+ 
+      
+      
+      
+      

@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
 
   def index
-    matching_categories = Category.all
+    $matching_categories = Category.all
 
-    $list_of_categories = matching_categories.order({ :created_at => :desc })
+    $list_of_categories = $matching_categories.order({ :created_at => :desc })
 
     render({ :template => "categories/index.html.erb" })
   end
@@ -11,9 +11,9 @@ class CategoriesController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_categories = Category.where({ :id => the_id })
+    $matching_categories = Category.where({ :id => the_id })
 
-    @the_category = matching_categories.at(0)
+    @the_category = $matching_categories.at(0)
 
     render({ :template => "categories/show.html.erb" })
   end
@@ -31,8 +31,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    matching_categories = Category.all
-    $list_of_categories = matching_categories.order({ :created_at => :desc })
+    $matching_categories = Category.all
+    $list_of_categories = $matching_categories.order({ :created_at => :desc })
 
     the_id = params.fetch("path_id")
     the_category = Category.where({ :id => the_id }).at(0)
