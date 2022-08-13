@@ -23,14 +23,20 @@
         <input type="text" id="loc_name_box" name="query_loc_name">
       </div>
 
-
       <div>
         <label for="category_id_box">
           Category
         </label>
 
-        <input type="text" id="category_id_box" name="query_category_name">
+        <select  type="text" id="category_id_box" name="query_category_name">
+        <% $list_of_categories.each do |a_cat| %>
+        <option>
+          <%= a_cat.category_name %>
+        </option>
+        <% end %>
+      </select>
       </div>
+
 
       <div>
         <label for="desc_box">
