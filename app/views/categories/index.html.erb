@@ -23,29 +23,6 @@
         <input type="text" id="category_name_box" name="query_category_name">
       </div>
 
-      <div>
-        <label for="dinner_spots_count_box">
-          Dinner spots count
-        </label>
-
-        <input type="text" id="dinner_spots_count_box" name="query_dinner_spots_count">
-      </div>
-
-      <div>
-        <label for="events_count_box">
-          Events count
-        </label>
-
-        <input type="text" id="events_count_box" name="query_events_count">
-      </div>
-
-      <div>
-        <label for="dessert_spots_count_box">
-          Dessert spots count
-        </label>
-
-        <input type="text" id="dessert_spots_count_box" name="query_dessert_spots_count">
-      </div>
 
       <button>
         Create category
@@ -65,18 +42,6 @@
 
         <th>
           Category name
-        </th>
-
-        <th>
-          Dinner spots count
-        </th>
-
-        <th>
-          Events count
-        </th>
-
-        <th>
-          Dessert spots count
         </th>
 
         <th>
@@ -101,17 +66,6 @@
           <%= a_category.category_name %>
         </td>
 
-        <td>
-          <%= a_category.dinner_spots_count %>
-        </td>
-
-        <td>
-          <%= a_category.events_count %>
-        </td>
-
-        <td>
-          <%= a_category.dessert_spots_count %>
-        </td>
 
         <td>
           <%= time_ago_in_words(a_category.created_at) %> ago
