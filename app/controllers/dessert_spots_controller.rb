@@ -20,7 +20,7 @@ class DessertSpotsController < ApplicationController
   def create
     the_dessert_spot = DessertSpot.new
     the_dessert_spot.loc_name = params.fetch("query_loc_name")
-    the_dessert_spot.visitor_id = params.fetch("query_visitor_id")
+    the_dessert_spot.visitor_id = session[:user_id]
     the_dessert_spot.category_id = params.fetch("query_category_id")
     the_dessert_spot.desc = params.fetch("query_desc")
     the_dessert_spot.image = params.fetch("query_image")
