@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Dessert spot #<%= @the_dessert_spot.id %> details
+      Dessert Spot: <%= @the_dessert_spot.loc_name %>
     </h1>
 
     <div>
@@ -13,35 +13,35 @@
 
       <div>
         <a href="/delete_dessert_spot/<%= @the_dessert_spot.id %>">
-          Delete dessert spot
+          Delete this Dessert Spot
         </a>
       </div>
     </div>
 
     <dl>
       <dt>
-        Loc name
+        Dessert Spot Name
       </dt>
       <dd>
         <%= @the_dessert_spot.loc_name %>
       </dd>
 
       <dt>
-        Visitor
+        Recommended by
       </dt>
       <dd>
-        <%= @the_dessert_spot.visitor_id %>
+        <%= @the_dessert_spot.dess_user.username.capitalize %>
       </dd>
 
       <dt>
         Category
       </dt>
       <dd>
-        <%= @the_dessert_spot.category_id %>
+        <%= @the_dessert_spot.dess_category.category_name %>
       </dd>
 
       <dt>
-        Desc
+        Description
       </dt>
       <dd>
         <%= @the_dessert_spot.desc %>
@@ -54,19 +54,6 @@
         <%= @the_dessert_spot.image %>
       </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_dessert_spot.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_dessert_spot.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
@@ -77,37 +64,30 @@
 <div>
   <div>
     <h2>
-      Edit dessert spot
+      Edit this Dessert Spot
     </h2>
 
     <form action="/modify_dessert_spot/<%= @the_dessert_spot.id %>"  method="post" >
       <div>
         <label for="loc_name_box">
-          Loc name
+          Dessert Spot Name
         </label>
 
         <input type="text" id="loc_name_box" name="query_loc_name" value="<%= @the_dessert_spot.loc_name %>">
       </div>
 
-      <div>
-        <label for="visitor_id_box">
-          Visitor
-        </label>
-
-        <input type="text" id="visitor_id_box" name="query_visitor_id" value="<%= @the_dessert_spot.visitor_id %>">
-      </div>
 
       <div>
         <label for="category_id_box">
           Category
         </label>
 
-        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dessert_spot.category_id %>">
+        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dessert_spot.dess_category.category_name %>">
       </div>
 
       <div>
         <label for="desc_box">
-          Desc
+          Description
         </label>
 
         <textarea id="desc_box" name="query_desc"><%= @the_dessert_spot.desc %></textarea>
@@ -122,7 +102,7 @@
       </div>
 
       <button>
-        Update dessert spot
+        Update Dessert Spot
       </button>
     </form>
   </div>

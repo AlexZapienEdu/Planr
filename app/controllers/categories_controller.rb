@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   
-  before_action(:index)
+
 
   def index
     matching_categories = Category.all
