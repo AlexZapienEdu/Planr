@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #Main Home page for viewers
+  get("/", { :controller => "planner", :action => "index" })
 
 
   # Routes for the Dessert spot resource:
