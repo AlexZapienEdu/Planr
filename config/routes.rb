@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Dessert spot resource:
+
+  # CREATE
+  post("/insert_dessert_spot", { :controller => "dessert_spots", :action => "create" })
+          
+  # READ
+  get("/dessert_spots", { :controller => "dessert_spots", :action => "index" })
+  
+  get("/dessert_spots/:path_id", { :controller => "dessert_spots", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_dessert_spot/:path_id", { :controller => "dessert_spots", :action => "update" })
+  
+  # DELETE
+  get("/delete_dessert_spot/:path_id", { :controller => "dessert_spots", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Event spot resource:
 
   # CREATE
