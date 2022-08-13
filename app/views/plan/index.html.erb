@@ -25,19 +25,29 @@
         </td>
       </tr>
 
+    <form action="/plan">
       <tr>
         <td>
-            <select  type="text" id="category_id_box1" name="query_cat1">
+            <label for="event_category">
+            Category
+            </label>
+
+            <select  type="text" id="event_category" name="query_cat1">
               <% $list_of_categories.each do |a_cat| %>
                 <option>
                   <%= a_cat.category_name %>
                 </option>
               <% end %>
             </select>
+
+            
         </td>
 
         <td>
-            <select  type="text" id="category_id_box2" name="query_cat2">
+            <label for="dinner_category">
+            Category
+            </label>
+            <select  type="text" id="dinner_category" name="query_cat2">
               <% $list_of_categories.each do |a_cat| %>
                 <option>
                   <%= a_cat.category_name %>
@@ -47,7 +57,10 @@
         </td>
 
          <td>
-            <select  type="text" id="category_id_box3" name="query_cat3">
+            <label for="dessert_category">
+            Category
+            </label>
+            <select  type="text" id="dessert_category" name="query_cat3">
               <% $list_of_categories.each do |a_cat| %>
                 <option>
                   <%= a_cat.category_name %>
@@ -55,8 +68,16 @@
               <% end %>
             </select>
         </td>
+          <button>
+            Plan your Night Out!
+          </button>
       </tr>
+    </form>
+
+
     </table>
+    
+    
 
  
       

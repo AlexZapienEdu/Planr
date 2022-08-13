@@ -6,12 +6,13 @@ class PlannerController < ApplicationController
     $list_of_categories = $matching_categories.order({ :created_at => :desc })
 
     render({ :template => "plan/index.html.erb" })
-  #end
+  end
 
-  #def plan
+  def plan
+
     #Random Event Section
     #Takes in the Category Name and matches it to the ID in the Category Table
-    input_cat = "Fun" #params.fetch("query_cat1")
+    input_cat = params.fetch("query_cat1")
     matching_categories1 = Category.where({ :category_name => input_cat}).at(0)
     cat_id = matching_categories1.id
 
@@ -27,7 +28,7 @@ class PlannerController < ApplicationController
 
     #Random Dinner Section
     #Takes in the Category Name and matches it to the ID in the Category Table
-    input_cat2 = "Fun" #params.fetch("query_cat2")
+    input_cat2 = params.fetch("query_cat2")
     matching_categories2 = Category.where({ :category_name => input_cat2}).at(0)
     cat_id2 = matching_categories2.id
 
@@ -43,7 +44,7 @@ class PlannerController < ApplicationController
 
     #Random Dessert Section
     #Takes in the Category Name and matches it to the ID in the Category Table
-    input_cat3 = "Fun" #params.fetch("query_cat3")
+    input_cat3 = params.fetch("query_cat3")
     matching_categories3 = Category.where({ :category_name => input_cat3}).at(0)
     cat_id3 = matching_categories3.id
 
@@ -55,7 +56,7 @@ class PlannerController < ApplicationController
     dessert_with_cat = matching_dessert_spots_with_cat.at(rand(matching_category_count3))
     dessert = dessert_with_cat.loc_name
 
-    dfadf
+    render({ :template => "categories/index.html.erb" })
   end
 
 
