@@ -43,7 +43,11 @@ class EventSpotsController < ApplicationController
 
     the_event_spot.event_name = params.fetch("query_event_name")
     the_event_spot.visitor_id = session[:user_id]
-    the_event_spot.category_id = params.fetch("query_category_id")
+
+    input_cat = params.fetch("query_category_name")
+    matching_categories = Category.where({ :category_name => input_cat}).at(0)
+    the_event_spot.category_id = matching_categories.id
+
     the_event_spot.desc = params.fetch("query_desc")
     the_event_spot.image = params.fetch("query_image")
 

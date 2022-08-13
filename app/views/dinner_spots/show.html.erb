@@ -64,7 +64,7 @@
 <div>
   <div>
     <h2>
-      Edit dinner spot
+      Edit Dinner spot
     </h2>
 
     <form action="/modify_dinner_spot/<%= @the_dinner_spot.id %>"  method="post" >
@@ -81,7 +81,7 @@
           Category
         </label>
 
-        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dinner_spot.din_category.category_name %>">
+        <input type="text" id="category_id_box" name="query_category_name" value="<%= @the_dinner_spot.din_category.category_name %>">
       </div>
 
       <div>
