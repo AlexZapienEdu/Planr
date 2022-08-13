@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Dinner spot #<%= @the_dinner_spot.id %> details
+      Dinner Spot: <%= @the_dinner_spot.loc_name %>
     </h1>
 
     <div>
@@ -13,35 +13,35 @@
 
       <div>
         <a href="/delete_dinner_spot/<%= @the_dinner_spot.id %>">
-          Delete dinner spot
+          Delete this Dinner Spot
         </a>
       </div>
     </div>
 
     <dl>
       <dt>
-        Loc name
+        Restaurant Name
       </dt>
       <dd>
         <%= @the_dinner_spot.loc_name %>
       </dd>
 
       <dt>
-        Visitor
+        Recommended by
       </dt>
       <dd>
-        <%= @the_dinner_spot.visitor_id %>
+        <%= @the_dinner_spot.din_user.username.capitalize %>
       </dd>
 
       <dt>
         Category
       </dt>
       <dd>
-        <%= @the_dinner_spot.category_id %>
+        <%= @the_dinner_spot.din_category.category_name %>
       </dd>
 
       <dt>
-        Desc
+        Description
       </dt>
       <dd>
         <%= @the_dinner_spot.desc %>
@@ -54,19 +54,6 @@
         <%= @the_dinner_spot.image %>
       </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_dinner_spot.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_dinner_spot.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
@@ -90,24 +77,16 @@
       </div>
 
       <div>
-        <label for="visitor_id_box">
-          Visitor
-        </label>
-
-        <input type="text" id="visitor_id_box" name="query_visitor_id" value="<%= @the_dinner_spot.visitor_id %>">
-      </div>
-
-      <div>
         <label for="category_id_box">
           Category
         </label>
 
-        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dinner_spot.category_id %>">
+        <input type="text" id="category_id_box" name="query_category_id" value="<%= @the_dinner_spot.din_category.category_name %>">
       </div>
 
       <div>
         <label for="desc_box">
-          Desc
+          Description
         </label>
 
         <textarea id="desc_box" name="query_desc"><%= @the_dinner_spot.desc %></textarea>
@@ -122,7 +101,7 @@
       </div>
 
       <button>
-        Update dinner spot
+        Update Dinner Spot
       </button>
     </form>
   </div>
