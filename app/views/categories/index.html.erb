@@ -11,19 +11,19 @@
 <div>
   <div>
     <h2>
-      Add a new category
+      Add a New Category
     </h2>
 
     <form action="/insert_category" method="post">
       <div>
         <label for="category_name_box">
-          Category name
+          Category Name
         </label>
 
         <input type="text" id="category_name_box" name="query_category_name">
       </div>
       <button>
-        Create category
+        Create Category
       </button>
     </form>
   </div>
@@ -36,7 +36,7 @@
       <tr>
 
         <th>
-          Category name
+          Category Name
         </th>
 
         <th>
@@ -52,7 +52,7 @@
 
         <td>
           <a href="/categories/<%= a_category.id %>">
-           See all things that are <%= a_category.category_name %> 
+           Edit
           </a>
         </td>
       </tr>
