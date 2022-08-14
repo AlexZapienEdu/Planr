@@ -4,11 +4,20 @@ class CategoriesController < ApplicationController
     $matching_categories = Category.all
 
     $list_of_categories = $matching_categories.order({ :created_at => :desc })
+    
 
     render({ :template => "categories/index.html.erb" })
   end
 
   def show
+    #initializing Dinner_Spot data
+    $matching_dinner_spots = DinnerSpot.all
+    $list_of_dinner_spots = $matching_dinner_spots.order({ :created_at => :desc })
+
+    #initializing Dessert_Spot data
+    $matching_dessert_spots = DessertSpot.all
+    $list_of_dessert_spots = $matching_dessert_spots.order({ :created_at => :desc })
+
     the_id = params.fetch("path_id")
 
     $matching_categories = Category.where({ :id => the_id })

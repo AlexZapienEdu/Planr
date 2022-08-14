@@ -1,9 +1,8 @@
 class DinnerSpotsController < ApplicationController
 
   def index
-    matching_dinner_spots = DinnerSpot.all
-
-    @list_of_dinner_spots = matching_dinner_spots.order({ :created_at => :desc })
+    $matching_dinner_spots = DinnerSpot.all
+    $list_of_dinner_spots = $matching_dinner_spots.order({ :created_at => :desc })
 
     render({ :template => "dinner_spots/index.html.erb" })
   end
@@ -11,9 +10,9 @@ class DinnerSpotsController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_dinner_spots = DinnerSpot.where({ :id => the_id })
+    $matching_dinner_spots = DinnerSpot.where({ :id => the_id })
 
-    @the_dinner_spot = matching_dinner_spots.at(0)
+    @the_dinner_spot = $matching_dinner_spots.at(0)
 
     render({ :template => "dinner_spots/show.html.erb" })
   end

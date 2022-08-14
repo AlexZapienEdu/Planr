@@ -1,8 +1,8 @@
 class DessertSpotsController < ApplicationController
   def index
-    matching_dessert_spots = DessertSpot.all
+    $matching_dessert_spots = DessertSpot.all
 
-    @list_of_dessert_spots = matching_dessert_spots.order({ :created_at => :desc })
+    $list_of_dessert_spots = $matching_dessert_spots.order({ :created_at => :desc })
 
     render({ :template => "dessert_spots/index.html.erb" })
   end
@@ -12,7 +12,7 @@ class DessertSpotsController < ApplicationController
 
     matching_dessert_spots = DessertSpot.where({ :id => the_id })
 
-    @the_dessert_spot = matching_dessert_spots.at(0)
+    @the_dessert_spot = $matching_dessert_spots.at(0)
 
     render({ :template => "dessert_spots/show.html.erb" })
   end
