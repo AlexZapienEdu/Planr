@@ -1,4 +1,4 @@
-<h3>Hey, <%= @current_user.username.capitalize%></h3>
+<h3>Hey, <%= @current_user.username%></h3>
 
 <dl>
 
@@ -9,7 +9,7 @@
     <%= @event%> 
   </dd>
   <dt>
-  Here's what your friend, <%= @event_with_cat.event_visitor.username.capitalize%>, had to say about it:  
+  Here's what your friend, <%= @event_with_cat.event_visitor.username%>, had to say about it:  
   </dt>
   <dd>
   <%= @event_with_cat.desc%>
@@ -22,7 +22,7 @@
   <%= @dinner%>
   </dd>
   <dt>
-  Your friend, <%= @dinner_with_cat.din_user.username.capitalize%>, described it as: 
+  Your friend, <%= @dinner_with_cat.din_user.username%>, described it as: 
   </dt>
   <dd>
   <%= @dinner_with_cat.desc%>
@@ -34,7 +34,7 @@
     <%= @dessert%>
   </dd>
   <dt>
-  Your friend, <%= @dinner_with_cat.din_user.username.capitalize%>, came here and described it as: 
+  Your friend, <%= @dinner_with_cat.din_user.username%>, came here and described it as: 
   </dt>
   <dd>
   <%= @dessert_with_cat.desc%>
