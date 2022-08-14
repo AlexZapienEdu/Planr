@@ -1,27 +1,19 @@
-<p><a href="/event_spots">Your Event Spots <a/></p>
-<p><a href="/dessert_spots">Your Dessert Spots<a/></p>
-<p><a href="/dinner_spots">Your Dinner Spots<a/></p>
-
-<p><a href="/categories">Categories<a/></p>
-<p><a href="/user_sign_out">Sign out<a/></p>
-<h1>Night Planr</h1>
-
 <h4> Welcome, <%= @current_user.username.capitalize%> </h4>
-<p>Select categories for each of your features below to plan for your ideal night out</p>
+<p>Select categories for each below to plan your night</p>
 
 
 <table style="width: 100%" border="1">
       <tr>
         <td>
-            Event
+           <b> Event </b>
         </td>
 
         <td>
-            Dinner
+           <b> Dinner </b>
         </td>
 
         <td>
-            Dessert
+          <b>  Dessert </b>
         </td>
       </tr>
 
@@ -69,7 +61,7 @@
             </select>
         </td>
           <button>
-            Plan your Night Out!
+            Plan your Night
           </button>
       </tr>
     </form>
