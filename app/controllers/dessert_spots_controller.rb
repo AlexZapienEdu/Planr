@@ -22,6 +22,7 @@ class DessertSpotsController < ApplicationController
     the_dessert_spot.loc_name = params.fetch("query_loc_name")
     the_dessert_spot.visitor_id = session[:user_id]
 
+    #Taking in category name from drop down menu and finding associated id on category table
     input_cat = params.fetch("query_category_name")
     matching_categories = Category.where({ :category_name => input_cat}).at(0)
     the_dessert_spot.category_id = matching_categories.id
@@ -44,6 +45,7 @@ class DessertSpotsController < ApplicationController
     the_dessert_spot.loc_name = params.fetch("query_loc_name")
     the_dessert_spot.visitor_id = session[:user_id]
 
+    #Taking in category name from drop down menu and finding associated id on category table
     input_cat = params.fetch("query_category_name")
     matching_categories = Category.where({ :category_name => input_cat}).at(0)
     the_dessert_spot.category_id = matching_categories.id
