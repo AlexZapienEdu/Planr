@@ -1,0 +1,43 @@
+Hey, <%= @current_user.username.capitalize%>
+
+<dl>
+
+  <dt>
+  You said you were feeling <b><%= @event_with_cat.event_category.category_name%></b>, so for an event, we recommend 
+  </dt>
+  <dd>
+    <%= @event%> 
+  </dd>
+  <dt>
+  Here's what your friend, <%= @event_with_cat.event_visitor.username.capitalize%>, had to say about it:  
+  </dt>
+  <dd>
+  <%= @event_with_cat.desc%>
+  </dd>
+
+  <dt>
+   For dinner, you said you wanted something <b><%= @dinner_with_cat.din_category.category_name%></b>, so we recommend
+  </dt>
+  <dd>
+  <%= @dinner%>
+  </dd>
+  <dt>
+  Your friend, <%= @dinner_with_cat.din_user.username.capitalize%>, described it as: 
+  </dt>
+  <dd>
+  <%= @dinner_with_cat.desc%>
+  </dd>
+
+  <dt>
+  And finally, for dessert, you were thinking of something <b><%= @dessert_with_cat.dess_category.category_name%></b>. We think you should go with:
+  <dd>
+    <%= @dessert%>
+  </dd>
+  <dt>
+  Your friend, <%= @dinner_with_cat.din_user.username.capitalize%>, came here and described it as: 
+  </dt>
+  <dd>
+  <%= @dessert_with_cat.desc%>
+  </dd>
+
+</dl>
