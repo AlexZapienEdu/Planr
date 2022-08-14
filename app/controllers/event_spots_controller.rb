@@ -1,8 +1,8 @@
 class EventSpotsController < ApplicationController
   def index
-    matching_event_spots = EventSpot.all
+    $matching_event_spots = EventSpot.all
 
-    @list_of_event_spots = matching_event_spots.order({ :created_at => :desc })
+    $list_of_event_spots = $matching_event_spots.order({ :created_at => :desc })
 
     render({ :template => "event_spots/index.html.erb" })
   end
@@ -10,9 +10,9 @@ class EventSpotsController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_event_spots = EventSpot.where({ :id => the_id })
+    $matching_event_spots = EventSpot.where({ :id => the_id })
 
-    @the_event_spot = matching_event_spots.at(0)
+    @the_event_spot = $matching_event_spots.at(0)
 
     render({ :template => "event_spots/show.html.erb" })
   end

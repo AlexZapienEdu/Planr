@@ -18,6 +18,10 @@ class CategoriesController < ApplicationController
     $matching_dessert_spots = DessertSpot.all
     $list_of_dessert_spots = $matching_dessert_spots.order({ :created_at => :desc })
 
+    #initializing Event_Spot data
+    $matching_event_spots = EventSpot.all
+    $list_of_event_spots = $matching_event_spots.order({ :created_at => :desc })
+
     the_id = params.fetch("path_id")
 
     $matching_categories = Category.where({ :id => the_id })

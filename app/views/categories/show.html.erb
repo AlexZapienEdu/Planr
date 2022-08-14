@@ -50,6 +50,69 @@
 </div>
 
 <hr>
+    <h2>
+      Event
+    </h2>
+    <table border="1">
+      <tr>
+
+        <th>
+          Event name
+        </th>
+
+        <th>
+          Visited by
+        </th>
+
+        <th>
+          Category
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% $list_of_event_spots.each do |an_event_spot| %>
+      <% if an_event_spot.category_id == @the_category.id%>
+      <tr>
+        <td>
+          <%= an_event_spot.event_name %>
+        </td>
+
+        <td>
+          <%= an_event_spot.event_visitor.username.capitalize %>
+        </td>
+
+        <td>
+          <%= an_event_spot.event_category.category_name %>
+        </td>
+
+        <td>
+          <%= an_event_spot.desc %>
+        </td>
+
+        <td>
+          <%= an_event_spot.image %>
+        </td>
+
+
+        <td>
+          <a href="/event_spots/<%= an_event_spot.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
 
     <h2>
       Restaurants

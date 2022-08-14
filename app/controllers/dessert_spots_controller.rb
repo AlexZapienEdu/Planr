@@ -10,7 +10,7 @@ class DessertSpotsController < ApplicationController
   def show
     the_id = params.fetch("path_id")
 
-    matching_dessert_spots = DessertSpot.where({ :id => the_id })
+    $matching_dessert_spots = DessertSpot.where({ :id => the_id })
 
     @the_dessert_spot = $matching_dessert_spots.at(0)
 
